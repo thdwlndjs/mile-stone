@@ -1,15 +1,16 @@
 /* MyPage.css */
-
+/* ✅ 전체 컨테이너 */
 .mypage-container {
   max-width: 720px;
   margin: 2rem auto;
-  background-color: white;
+  background-color: #fff;
   border-radius: 1.5rem;
   box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
   padding: 1.5rem;
   font-family: 'Pretendard', sans-serif;
 }
 
+/* 👤 프로필 영역 */
 .profile-header {
   display: flex;
   align-items: center;
@@ -42,43 +43,84 @@
   font-size: 0.875rem;
 }
 
-/* 스펙트럼 바 */
+/* ===========================
+   📊 뉴스 스펙트럼
+=========================== */
 .spectrum {
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
   margin-bottom: 1rem;
 }
 
+.spectrum-wrapper {
+  position: relative;
+  padding-bottom: 16px;
+}
+
+/* 막대 그래프 */
 .spectrum-bar {
   display: flex;
-  height: 16px;
+  width: 100%;
+  height: 12px;
   border-radius: 9999px;
   overflow: hidden;
   background-color: #e5e7eb;
 }
 
-.spectrum-bar div:nth-child(1) {
-  background-color: #3b82f6;
-  width: 40%;
+/* 내 위치 표시 점 */
+.spectrum-indicator {
+  position: absolute;
+  top: -6px;
+  width: 14px;
+  height: 14px;
+  background-color: #2563eb;
+  border-radius: 50%;
+  border: 2px solid #fff;
+  transform: translateX(-50%);
+  box-shadow: 0 0 3px rgba(0, 0, 0, 0.2);
 }
 
-.spectrum-bar div:nth-child(2) {
-  background-color: #22c55e;
-  width: 20%;
-}
-
-.spectrum-bar div:nth-child(3) {
-  background-color: #ef4444;
-  width: 40%;
-}
-
+/* 라벨 */
 .spectrum-labels {
   display: flex;
   justify-content: space-between;
   font-size: 0.875rem;
   color: #6b7280;
-  margin-top: 4px;
+  margin-top: 8px;
 }
 
-/* 추천 뉴스 */
+/* ===========================
+   🔵🟢🔴 Google-style 점 배열
+=========================== */
+.spectrum-garden-dots {
+  display: grid;
+  grid-template-columns: repeat(7, 1fr);
+  grid-auto-rows: 12px;
+  justify-items: center;
+  align-items: center;
+  gap: 10px 16px;
+  width: 100%;
+  margin-top: 12px;
+  padding: 10px 0;
+}
+
+.spectrum-dot {
+  width: 10px;
+  height: 10px;
+  border-radius: 50%;
+  opacity: 0.9;
+  transition: transform 0.2s ease, opacity 0.2s ease;
+}
+
+.spectrum-dot:hover {
+  transform: scale(1.3);
+  opacity: 1;
+}
+
+/* ===========================
+   📰 추천 뉴스 카드
+=========================== */
 .news-section {
   margin-top: 2rem;
 }
@@ -95,11 +137,12 @@
   font-size: 0.875rem;
   border: none;
   cursor: pointer;
+  transition: background-color 0.2s ease, color 0.2s ease;
 }
 
 .filter-buttons button.active {
   background-color: #2563eb;
-  color: white;
+  color: #fff;
 }
 
 .filter-buttons button.inactive {
@@ -118,6 +161,12 @@
   border-radius: 12px;
   padding: 1rem;
   box-shadow: 0 1px 2px rgba(0, 0, 0, 0.05);
+  transition: transform 0.2s ease, box-shadow 0.2s ease;
+}
+
+.news-card:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.08);
 }
 
 .news-card h4 {
@@ -135,7 +184,7 @@
   font-size: 0.75rem;
   padding: 3px 8px;
   border-radius: 6px;
-  color: white;
+  color: #fff;
 }
 
 .news-tag.blue {
