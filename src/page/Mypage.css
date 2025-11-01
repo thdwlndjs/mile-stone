@@ -1,0 +1,151 @@
+/* MyPage.css */
+
+.mypage-container {
+  max-width: 720px;
+  margin: 2rem auto;
+  background-color: white;
+  border-radius: 1.5rem;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  padding: 1.5rem;
+  font-family: 'Pretendard', sans-serif;
+}
+
+.profile-header {
+  display: flex;
+  align-items: center;
+  margin-bottom: 1.5rem;
+}
+
+.profile-avatar {
+  width: 64px;
+  height: 64px;
+  background-color: #e5e7eb;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 28px;
+  color: #6b7280;
+}
+
+.profile-info {
+  margin-left: 1rem;
+}
+
+.profile-info h2 {
+  font-size: 1.125rem;
+  font-weight: 600;
+}
+
+.profile-info p {
+  color: #6b7280;
+  font-size: 0.875rem;
+}
+
+/* 스펙트럼 바 */
+.spectrum {
+  margin-bottom: 1rem;
+}
+
+.spectrum-bar {
+  display: flex;
+  height: 16px;
+  border-radius: 9999px;
+  overflow: hidden;
+  background-color: #e5e7eb;
+}
+
+.spectrum-bar div:nth-child(1) {
+  background-color: #3b82f6;
+  width: 40%;
+}
+
+.spectrum-bar div:nth-child(2) {
+  background-color: #22c55e;
+  width: 20%;
+}
+
+.spectrum-bar div:nth-child(3) {
+  background-color: #ef4444;
+  width: 40%;
+}
+
+.spectrum-labels {
+  display: flex;
+  justify-content: space-between;
+  font-size: 0.875rem;
+  color: #6b7280;
+  margin-top: 4px;
+}
+
+/* 추천 뉴스 */
+.news-section {
+  margin-top: 2rem;
+}
+
+.filter-buttons {
+  display: flex;
+  gap: 0.5rem;
+  margin-bottom: 1rem;
+}
+
+.filter-buttons button {
+  padding: 6px 12px;
+  border-radius: 8px;
+  font-size: 0.875rem;
+  border: none;
+  cursor: pointer;
+}
+
+.filter-buttons button.active {
+  background-color: #2563eb;
+  color: white;
+}
+
+.filter-buttons button.inactive {
+  background-color: #e5e7eb;
+  color: #374151;
+}
+
+.news-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));
+  gap: 1rem;
+}
+
+.news-card {
+  border: 1px solid #e5e7eb;
+  border-radius: 12px;
+  padding: 1rem;
+  box-shadow: 0 1px 2px rgba(0, 0, 0, 0.05);
+}
+
+.news-card h4 {
+  font-weight: 600;
+  margin-bottom: 4px;
+}
+
+.news-card p {
+  color: #6b7280;
+  font-size: 0.875rem;
+  margin-bottom: 8px;
+}
+
+.news-tag {
+  font-size: 0.75rem;
+  padding: 3px 8px;
+  border-radius: 6px;
+  color: white;
+}
+
+.news-tag.blue {
+  background-color: #3b82f6;
+}
+
+.news-tag.green {
+  background-color: #22c55e;
+}
+
+.news-tag.red {
+  background-color: #ef4444;
+}
