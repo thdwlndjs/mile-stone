@@ -1,8 +1,5 @@
-# 📰 React + Tailwind 뉴스 카드 뷰어
 
-> 깔끔한 뉴스 카드 UI와 진보/보수 시각 분석 그래프를 제공하는 React + Tailwind 프로젝트입니다.
 
----
 
 ## 🚀 실행 방법
 
@@ -29,29 +26,12 @@ npm run dev
 | 분류         | 사용 기술                      |
 | ---------- | -------------------------- |
 | Frontend   | React 18, Vite             |
-| Styling    | Tailwind CSS               |
+| Styling    | CSS               |
 | Build      | PostCSS, Autoprefixer      |
 | Deployment | Vercel or Firebase Hosting |
 
 ---
 
-## 📸 실제 화면 구성 (예시 코드)
-
-```jsx
-<div className="max-w-xl mx-auto p-6 bg-white rounded-2xl shadow-md">
-  <h2 className="text-2xl font-bold mb-2">트럼프, APEC서 한·미 관세 협상 ‘최종 단계에 와 있다’ 밝혀</h2>
-  <p className="text-blue-600 text-sm">연합뉴스 · 30분 전</p>
-  <div className="w-full h-3 bg-gray-200 rounded-full my-6 overflow-hidden">
-    <div className="flex w-full h-full">
-      <div className="bg-blue-500" style={{ width: '30%' }}></div>
-      <div className="bg-green-500" style={{ width: '20%' }}></div>
-      <div className="bg-red-500" style={{ width: '50%' }}></div>
-    </div>
-  </div>
-</div>
-```
-
----
 
 ## 🧩 설치 가이드
 
@@ -76,30 +56,13 @@ npm install react@18.3.1 react-dom@18.3.1
 npm install react-router-dom@6.30.1
 ```
 
-Tailwind / Vite와의 호환성을 위해 다음 명령도 실행하세요:
-
-```bash
-npm install -D vite@5.2.11 tailwindcss@3.4.3 postcss autoprefixer
-```
-
-그 후 `postcss.config.js`를 다음과 같이 수정합니다 👇
-
-```js
-export default {
-  plugins: {
-    tailwindcss: {},
-    autoprefixer: {},
-  },
-};
-```
-
 완료 후 다시 실행:
 
 ```bash
 npm run dev
 ```
 
-✅ 이제 React 18 + Tailwind + Vite 환경에서 안정적으로 작동합니다!
+✅ 이제 React 18 + Vite 환경에서 안정적으로 작동합니다!
 
 ---
 
@@ -127,7 +90,6 @@ npm run dev
 | -------- | ------ |
 | React    | 18.3.1 |
 | Vite     | 5.2.11 |
-| Tailwind | 3.4.3  |
 
 ---
 
