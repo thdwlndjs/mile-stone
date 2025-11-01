@@ -10,20 +10,22 @@ const MyPage = () => {
   // 내 위치 (전체 비율 기반 평균값)
   const mySpectrumPosition = liberalRatio + neutralRatio / 2;
 
-  // 점 데이터 (3줄 × 7칸 구조)
-  const totalCols = 7;
-  const totalRows = 3;
-  const totalDots = totalCols * totalRows;
+  // 🔹 달력형 성향 데이터 생성 (10주 × 7일)
+  const weeks = 28;
+  const days = 4;
+  const totalCells = weeks * days;
 
-  const dots = Array.from({ length: totalDots }).map((_, i) => {
-    const col = i % totalCols;
-    const row = Math.floor(i / totalCols);
+  const dotData = Array.from({ length: totalCells }).map((_, i) => {
+    const dddd = Math.floor(i / days);
+    const day = i % days;
+    const rand = Math.random();
 
-    let color = '#3b82f6'; // Liberal
-    if (col >= 3 && col < 5) color = '#22c55e'; // Neutral
-    if (col >= 5) color = '#ef4444'; // Conservative
+    let color = '#ffffffff'; // 기본 회색 (데이터 없는 날)
+    if (rand < 0.3) color = '#3b82f6'; // 진보
+    else if (rand < 0.6) color = '#22c55e'; // 중립
+    else if (rand < 0.9) color = '#ef4444'; // 보수
 
-    return { id: i, color, col, row };
+    return { id: i, dddd, day, color };
   });
 
   return (
@@ -61,16 +63,17 @@ const MyPage = () => {
           </div>
         </div>
 
-        {/* 🔵🟢🔴 점 배열 (Google-style compact) */}
-        <div className="spectrum-garden-dots">
-          {dots.map((dot) => (
+        {/* 🗓️ 달력형 성향 점 시각화 */}
+        <div className="calendar-heatmap">
+          {dotData.map((dot) => (
             <div
               key={dot.id}
-              className="spectrum-dot"
+              className="calendar-cell"
               style={{
+                gridColumn: dot.dddd + 1,
+                gridRow: dot.day + 1,
                 backgroundColor: dot.color,
-                gridColumn: dot.col + 1,
-                gridRow: dot.row + 1,
+                marginTop: `${Math.random() * 4 - 2}px`, // 약간만 불규칙성
               }}
             />
           ))}

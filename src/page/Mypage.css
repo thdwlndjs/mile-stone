@@ -1,16 +1,13 @@
-/* MyPage.css */
-/* ✅ 전체 컨테이너 */
 .mypage-container {
-  max-width: 720px;
+  max-width: 1000px;
   margin: 2rem auto;
-  background-color: #fff;
+  background-color: white;
   border-radius: 1.5rem;
   box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
   padding: 1.5rem;
   font-family: 'Pretendard', sans-serif;
 }
 
-/* 👤 프로필 영역 */
 .profile-header {
   display: flex;
   align-items: center;
@@ -43,14 +40,9 @@
   font-size: 0.875rem;
 }
 
-/* ===========================
-   📊 뉴스 스펙트럼
-=========================== */
+/* 스펙트럼 */
 .spectrum {
-  display: flex;
-  flex-direction: column;
-  gap: 12px;
-  margin-bottom: 1rem;
+  margin-bottom: 1.5rem;
 }
 
 .spectrum-wrapper {
@@ -58,17 +50,14 @@
   padding-bottom: 16px;
 }
 
-/* 막대 그래프 */
 .spectrum-bar {
   display: flex;
   width: 100%;
   height: 12px;
   border-radius: 9999px;
   overflow: hidden;
-  background-color: #e5e7eb;
 }
 
-/* 내 위치 표시 점 */
 .spectrum-indicator {
   position: absolute;
   top: -6px;
@@ -76,12 +65,11 @@
   height: 14px;
   background-color: #2563eb;
   border-radius: 50%;
-  border: 2px solid #fff;
+  border: 2px solid white;
+  z-index: 10;
   transform: translateX(-50%);
-  box-shadow: 0 0 3px rgba(0, 0, 0, 0.2);
 }
 
-/* 라벨 */
 .spectrum-labels {
   display: flex;
   justify-content: space-between;
@@ -90,37 +78,37 @@
   margin-top: 8px;
 }
 
-/* ===========================
-   🔵🟢🔴 Google-style 점 배열
-=========================== */
-.spectrum-garden-dots {
+/* 🗓️ 달력형 히트맵 스타일 (균등 간격 버전) */
+.calendar-heatmap {
   display: grid;
-  grid-template-columns: repeat(7, 1fr);
-  grid-auto-rows: 12px;
+  grid-template-columns: repeat(auto-fit, minmax(clamp(8px, 2vw, 18px), 1fr)); /* ✅ 자동 맞춤 */
+  grid-auto-rows: minmax(14px, auto);
+  gap: clamp(2px, 0.4vw, 3px); /* ✅ 살짝 간격 줄임 */
   justify-items: center;
   align-items: center;
-  gap: 10px 16px;
+  margin-top: 16px;
+  margin-bottom: 16px;
   width: 100%;
-  margin-top: 12px;
-  padding: 10px 0;
+  box-sizing: border-box;
 }
 
-.spectrum-dot {
-  width: 10px;
-  height: 10px;
-  border-radius: 50%;
-  opacity: 0.9;
+/* 점(셀) 스타일 */
+.calendar-cell {
+  aspect-ratio: 1 / 1; /* ✅ 정사각형 유지 */
+  width: 80%; /* 셀 크기를 부모의 비율로 조절 */
+  border-radius: 40%;
   transition: transform 0.2s ease, opacity 0.2s ease;
+  opacity: 0.9;
+  max-width: 22px; /* 너무 커지는 것 방지 */
+  min-width: 2px; /* 너무 작아지는 것 방지 */
 }
 
-.spectrum-dot:hover {
-  transform: scale(1.3);
+.calendar-cell:hover {
+  transform: scale(1.25);
   opacity: 1;
 }
 
-/* ===========================
-   📰 추천 뉴스 카드
-=========================== */
+/* 추천 뉴스 */
 .news-section {
   margin-top: 2rem;
 }
@@ -137,12 +125,11 @@
   font-size: 0.875rem;
   border: none;
   cursor: pointer;
-  transition: background-color 0.2s ease, color 0.2s ease;
 }
 
 .filter-buttons button.active {
   background-color: #2563eb;
-  color: #fff;
+  color: white;
 }
 
 .filter-buttons button.inactive {
@@ -161,12 +148,6 @@
   border-radius: 12px;
   padding: 1rem;
   box-shadow: 0 1px 2px rgba(0, 0, 0, 0.05);
-  transition: transform 0.2s ease, box-shadow 0.2s ease;
-}
-
-.news-card:hover {
-  transform: translateY(-2px);
-  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.08);
 }
 
 .news-card h4 {
@@ -184,7 +165,7 @@
   font-size: 0.75rem;
   padding: 3px 8px;
   border-radius: 6px;
-  color: #fff;
+  color: white;
 }
 
 .news-tag.blue {
