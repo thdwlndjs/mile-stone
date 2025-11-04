@@ -137,7 +137,9 @@ npm run dev
 > 📧 contact: [milestone@dev.com](mailto:milestone@dev.com)
 > 🌐 [https://github.com/milestone](https://github.com/milestone)
 
-///////////////////////////////////////////////////////////////////////////////////////////////////////////////
+---
+---
+
  **“GitHub에서 mile-stone 프로젝트를 클론한 후 로컬에서 실행하기 위한 완전 설치 가이드”**
 
 ````markdown
