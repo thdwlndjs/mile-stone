@@ -1,0 +1,234 @@
+/* mypage.css */
+.mypage-container {
+  max-width: 1000px;
+  margin: 2rem auto;
+  background-color: white;
+  border-radius: 1.5rem;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  padding: 1.5rem;
+  font-family: 'Pretendard', sans-serif;
+}
+
+.profile-header {
+  display: flex;
+  align-items: center;
+  margin-bottom: 1.5rem;
+}
+
+.profile-avatar {
+  width: 64px;
+  height: 64px;
+  background-color: #e5e7eb;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 28px;
+  color: #6b7280;
+}
+
+.profile-info {
+  margin-left: 1rem;
+}
+
+.profile-info h2 {
+  font-size: 1.125rem;
+  font-weight: 600;
+}
+
+.profile-info p {
+  color: #6b7280;
+  font-size: 0.875rem;
+}
+
+/* 스펙트럼 */
+.spectrum {
+  margin-bottom: 1.5rem;
+}
+
+.spectrum-wrapper {
+  position: relative;
+  padding-bottom: 16px;
+}
+
+.spectrum-bar {
+  display: flex;
+  width: 100%;
+  height: 12px;
+  border-radius: 9999px;
+  overflow: hidden;
+}
+
+.spectrum-indicator {
+  position: absolute;
+  top: -6px;
+  width: 14px;
+  height: 14px;
+  background-color: #2563eb;
+  border-radius: 50%;
+  border: 2px solid white;
+  z-index: 10;
+  transform: translateX(-50%);
+}
+
+.spectrum-labels {
+  display: flex;
+  justify-content: space-between;
+  font-size: 0.875rem;
+  color: #6b7280;
+  margin-top: 8px;
+}
+
+/* 🗓️ 달력형 히트맵 스타일 (균등 간격 버전) */
+.calendar-heatmap {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(clamp(8px, 2vw, 18px), 1fr)); /* ✅ 자동 맞춤 */
+  grid-auto-rows: minmax(14px, auto);
+  gap: clamp(2px, 0.4vw, 3px); /* ✅ 살짝 간격 줄임 */
+  justify-items: center;
+  align-items: center;
+  margin-top: 16px;
+  margin-bottom: 16px;
+  width: 100%;
+  box-sizing: border-box;
+}
+
+/* 점(셀) 스타일 */
+.calendar-cell {
+  aspect-ratio: 1 / 1; /* ✅ 정사각형 유지 */
+  width: 80%; /* 셀 크기를 부모의 비율로 조절 */
+  border-radius: 40%;
+  transition: transform 0.2s ease, opacity 0.2s ease;
+  opacity: 0.9;
+  max-width: 22px; /* 너무 커지는 것 방지 */
+  min-width: 2px; /* 너무 작아지는 것 방지 */
+}
+
+.calendar-cell:hover {
+  transform: scale(1.25);
+  opacity: 1;
+}
+
+/* 추천 뉴스 */
+.news-section {
+  margin-top: 2rem;
+}
+
+.filter-buttons {
+  display: flex;
+  gap: 0.5rem;
+  margin-bottom: 1rem;
+}
+
+.filter-buttons button {
+  padding: 6px 12px;
+  border-radius: 8px;
+  font-size: 0.875rem;
+  border: none;
+  cursor: pointer;
+}
+
+.filter-buttons button.active {
+  background-color: #2563eb;
+  color: white;
+}
+
+.filter-buttons button.inactive {
+  background-color: #e5e7eb;
+  color: #374151;
+}
+
+.news-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));
+  gap: 1rem;
+}
+
+.news-card {
+  border: 1px solid #e5e7eb;
+  border-radius: 12px;
+  padding: 1rem;
+  box-shadow: 0 1px 2px rgba(0, 0, 0, 0.05);
+}
+
+.news-card h4 {
+  font-weight: 600;
+  margin-bottom: 4px;
+}
+
+.news-card p {
+  color: #6b7280;
+  font-size: 0.875rem;
+  margin-bottom: 8px;
+}
+
+.news-tag {
+  font-size: 0.75rem;
+  padding: 3px 8px;
+  border-radius: 6px;
+  color: white;
+}
+
+.news-tag.blue {
+  background-color: #3b82f6;
+}
+
+.news-tag.green {
+  background-color: #22c55e;
+}
+
+.news-tag.red {
+  background-color: #ef4444;
+}
+
+
+
+/* --- Mypage 하단 버튼 스타일 --- */
+
+/* 구분선 */
+.mypage-divider {
+  margin: 2rem 0;
+  border: none;
+  border-top: 1px solid #e5e7eb;
+}
+
+.mypage-footer-buttons {
+  display: flex;
+  justify-content: center;
+  gap: 1rem;
+}
+
+
+.mypage-return-button {
+  width: 100%;
+  padding: 0.75rem 1.5rem; /* 높이 조절 */
+  background-color: #2563eb;
+  color: white;
+  font-weight: 600;
+  border-radius: 0.375rem;
+  cursor: pointer;
+  border: none;
+  font-size: 1.125rem;
+  text-align: center;
+  transition: background-color 0.2s;
+}
+.mypage-return-button:hover {
+  background-color: #1d4ed8;
+}
+
+/* [수정] 여기도 클래스 이름 변경 */
+.mypage-return-button.link-button {
+  text-decoration: none;
+  background-color: #6b7280;
+}
+.mypage-return-button.link-button:hover {
+  background-color: #4b5563;
+}
+
+/* [수정] 여기도 클래스 이름 변경 */
+.mypage-return-button.logout-button {
+  background-color: #ef4444; 
+}
+.mypage-return-button.logout-button:hover {
+  background-color: #b91c1c;
+}
