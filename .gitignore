@@ -1,0 +1,5 @@
+echo node_modules/ > .gitignore
+echo articles_queue.csv >> .gitignore
+echo seen_urls.csv >> .gitignore
+echo backups/ >> .gitignore
+echo .env >> .gitignore

@@ -1,0 +1,27 @@
+{
+  "name": "rss_collector",
+  "version": "1.0.0",
+  "description": "",
+  "main": "rss_server.js",
+  "type": "module",
+  "scripts": {
+    "start": "node rss_server.js",
+    "dev": "nodemon rss_server.js",
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "date-fns": "^4.1.0",
+    "express": "^5.1.0",
+    "iconv-lite": "^0.6.3",
+    "node-fetch": "^3.3.2",
+    "node-schedule": "^2.1.1",
+    "rss-parser": "^3.13.0",
+    "xml2js": "^0.6.2"
+  },
+  "devDependencies": {
+    "nodemon": "^3.1.7"
+  }
+}
